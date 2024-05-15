@@ -14,7 +14,7 @@ body {
 
 header { 
   background-color: white; 
-  color: green; 
+  color: rgb(0, 105, 128); 
   text-align: center; 
   padding: 1rem 0; 
   box-shadow: 0 4px 18px grey; 
@@ -47,7 +47,7 @@ main {
 } 
 
 button { 
-  background-color: green; 
+  background-color: rgb(0, 36, 128); 
   color: white; 
   border: none; 
   cursor: pointer; 
