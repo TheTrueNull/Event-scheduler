@@ -17,6 +17,7 @@ function App() {
         axios.get('http://localhost:5000/events')
             .then(response => {
                 setEvents(response.data);
+                setCompletedEvents(response.data.filter(event => event.done));
             })
             .catch(error => console.error('Error fetching events:', error));
     };
@@ -71,11 +72,7 @@ function App() {
                     t.id === id ? { ...t, done: true } : t
                 );
                 setEvents(updatedEvents);
-
-                const completedEvent = updatedEvents.find(t => t.id === id);
-                if (completedEvent) {
-                    setCompletedEvents([...completedEvents, completedEvent]);
-                }
+                setCompletedEvents(updatedEvents.filter(event => event.done));
             })
             .catch(error => console.error('Error marking event as done:', error));
     };
